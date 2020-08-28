@@ -1,0 +1,75 @@
+@import "~normalize-scss/sass/normalize";
+@import "~bootstrap-scss";
+
+#app {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.calc- {
+  &row {
+    .col-auto {
+      padding: 0 5px 0 20px;
+      &:first-child {
+        padding-left: 0;
+        &:before {
+          display: none;
+        }
+      }
+      &::before {
+        content: '+';
+        display: inline-flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        width: 15px;
+        height: 15px;
+        line-height: 1;
+        left: 1px;
+        top: 50%;
+        margin-top: -8px;
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        width: 35px;
+        background-color: #000;
+        height: 1px;
+      }
+    }
+  }
+  &input {
+    text-align: center;
+    width: 35px;
+    padding-left: 0;
+    padding-right: 0;
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.result- {
+  &text {
+    margin-bottom: 10px;
+    &::before {
+      content: '=';
+      display: block;
+      position: relative;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+  &row {
+    .btn {
+      width: 150px;
+    }
+  }
+}
